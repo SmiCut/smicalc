@@ -36,10 +36,17 @@ commercial version under your own brand. No visible SmiCut attribution is requir
 Keep the MIT license and copyright notice with your distribution. See
 [REBRANDING.md](REBRANDING.md) and [LICENSE](LICENSE).
 
-The open-source license covers this repository, not access to SmiCut's hosted AI
-service. Third-party deployments must arrange permitted backend access or provide
-their own compatible service. The service URL and request contract are documented
-in `docs/development.md`.
+## Material Selector on your website
+
+Email [oliver@smicut.se](mailto:oliver@smicut.se?subject=Material%20Selector%20website%20access)
+with your company name, website address(es), program and language to request access
+to SmiCut's optional AI material service. Once SmiCut confirms the approved website,
+the app connects automatically. **No API key is needed.** The existing limit of
+30 requests per minute per IP address remains.
+
+Follow the [three-step Material Selector guide](MATERIAL_SELECTOR.md).
+The calculators also work without AI access by selecting materials manually.
+Hosted service access is separate from the MIT software license.
 
 ## Development and verification
 
