@@ -43,3 +43,9 @@ MIT. Preserve the existing request contract: see the fetch body in the HTML.
 Locale-specific language codes and stable material keys connect replies to the
 frontend's translated labels. Do not send credentials in browser code.
 Calculator tests run without calling this backend.
+
+For SmiCut-hosted access, follow [the website approval guide](../MATERIAL_SELECTOR.md).
+Website approval requires no browser API key. Preserve `message`, `language`,
+`history` and the material-key response fields. To use your own compatible service,
+change the `API_URL` constant in the English HTML, synchronize both English sources
+and regenerate localized apps; never embed an AI-provider secret in HTML.
