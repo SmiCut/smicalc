@@ -1,1 +1,25 @@
-
+name: Verify
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - run: npm ci --ignore-scripts
+      - run: npx playwright install --with-deps chromium
+      - run: python -m pip install -r requirements.txt
+      - run: cmp "smicut cutting data app.html" "Translation/English/smicut cutting data app-eng.html"
+      - run: python Translation/tools/verify_localized_apps.py --locales all
+      - run: npm test
