@@ -1,68 +1,83 @@
 # SmiCalc
 
-Multilingual cutting-data calculators by [SmiCut](https://smicut.com), available
-under the MIT license. Run the app locally, embed it in WordPress, or adapt it
-under your own brand. No application build step is required.
+**Free cutting-data calculators. Choose your language, open the app and start calculating.**
 
-## Calculators
+[**Use online**](https://smicut.com/en/smicalc-cutting-data-calculator/) · [**Download in your language**](#choose-your-language) · [**Adapt for your company**](REBRANDING.md)
 
-- Thread tapping
-- Thread turning
-- FourCut SQ external radial grooving
-- Solid carbide end mills
-- Solid carbide drills
-- Optional AI-assisted material selection
+![SmiCalc start screen with calculators for tapping, thread turning, grooving, milling and drilling](docs/images/smicalc-preview.png)
 
-Thread-milling software is maintained separately in [SmiProg](https://github.com/SmiCut/smiprog).
+SmiCalc helps you calculate cutting data and estimate machining times for thread
+tapping, thread turning, grooving, solid carbide milling and drilling. Made by
+[SmiCut](https://smicut.com). Free to use and adapt, including commercial use.
 
-## Quick start
+## Choose your language
 
-Download the repository and open `smicut cutting data app.html` in your browser.
-Calculator functions run locally. Internet access is needed for external links
-and the separately hosted Material Selector. Choose materials manually to work offline.
+Use the online version immediately, or download **one HTML file** for your computer.
+No GitHub account, installation or programming knowledge is needed to use it.
+There are 20 language and market editions:
 
-The `Translation/` folders contain English and 19 localized editions. Each app
-HTML file includes its own CSS, JavaScript, data and MIT license notice.
-The separate material-category HTML files are also included.
+<!-- BEGIN LANGUAGE TABLE -->
+| Language | Use online | Download HTML |
+|---|---|---|
+| Bahasa Indonesia | [Open SmiCalc](https://smicut.com/id/smicalc-kalkulator-cutting-data/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-id.html) |
+| Dansk | [Open SmiCalc](https://smicut.com/da/smicalc-beregner-til-skaeredata/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-da.html) |
+| Deutsch | [Open SmiCalc](https://smicut.com/de/smicalc-schnittdatenrechner/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-de.html) |
+| English – Global | [Open SmiCalc](https://smicut.com/en/smicalc-cutting-data-calculator/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-en.html) |
+| English – South Africa | [Open SmiCalc](https://smicut.com/en-za/smicalc-cutting-data-calculator-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-en-za.html) |
+| Español – Global | [Open SmiCalc](https://smicut.com/es-gl/smicalc-calculadora-de-datos-de-corte-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-es-gl.html) |
+| Español – España | [Open SmiCalc](https://smicut.com/es/smicalc-calculadora-de-datos-de-corte/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-es.html) |
+| Français – Global | [Open SmiCalc](https://smicut.com/fr/smicalc-calculateur-de-donnees-de-coupe/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-fr.html) |
+| Français – Belgique | [Open SmiCalc](https://smicut.com/fr-be/smicalc-calculateur-de-donnees-de-coupe-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-fr-be.html) |
+| Italiano | [Open SmiCalc](https://smicut.com/it/smicalc-calcolatore-dei-dati-di-taglio/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-it.html) |
+| Magyar | [Open SmiCalc](https://smicut.com/hu/smicalc-forgacsolasi-adatok-kalkulatora/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-hu.html) |
+| Nederlands – België | [Open SmiCalc](https://smicut.com/nl-be/smicalc-snijgegevenscalculator/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-nl-be.html) |
+| Nederlands – Nederland | [Open SmiCalc](https://smicut.com/nl/smicalc-snijgegevenscalculator-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-nl.html) |
+| Polski | [Open SmiCalc](https://smicut.com/pl/smicalc-kalkulator-parametrow-skrawania/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-pl.html) |
+| Svenska | [Open SmiCalc](https://smicut.com/sv/smicalc-berakningsverktyg-for-skardata/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-sv.html) |
+| Русский | [Open SmiCalc](https://smicut.com/ru/smicalc-%d0%ba%d0%b0%d0%bb%d1%8c%d0%ba%d1%83%d0%bb%d1%8f%d1%82%d0%be%d1%80-%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%be%d0%b2-%d1%80%d0%b5%d0%b7%d0%b0%d0%bd%d0%b8%d1%8f/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-ru.html) |
+| 简体中文 | [Open SmiCalc](https://smicut.com/zh/smicalc-%e5%88%87%e5%89%8a%e5%8f%82%e6%95%b0%e8%ae%a1%e7%ae%97%e5%99%a8/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-zh.html) |
+| 繁體中文 | [Open SmiCalc](https://smicut.com/zh-tw/smicalc-%e5%88%87%e5%89%8a%e5%8f%83%e6%95%b8%e8%a8%88%e7%ae%97%e5%99%a8/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-zh-tw.html) |
+| 日本語 | [Open SmiCalc](https://smicut.com/ja/%e3%82%b9%e3%83%9f%e3%82%ab%e3%83%ab%e3%82%af-%e5%88%87%e5%89%8a%e6%9d%a1%e4%bb%b6%e8%a8%88%e7%ae%97%e3%83%84%e3%83%bc%e3%83%ab/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-ja.html) |
+| 한국어 | [Open SmiCalc](https://smicut.com/ko/smicalc-%ec%a0%88%ec%82%ad-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b3%84%ec%82%b0%ea%b8%b0/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-ko.html) |
+<!-- END LANGUAGE TABLE -->
 
-For WordPress, use the widget HTML in a suitable Custom HTML block. Its CSS is
-scoped under `#smicut-cutting-data-app`; see `wordpress-embed-design-guide.md`.
-Test your theme and the way your site permits inline JavaScript.
+[Download all languages in one ZIP](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-apps.zip) · [Latest release and changes](https://github.com/SmiCut/smicalc/releases/latest)
 
-## Reuse and your own brand
+## Open your download in three steps
 
-You may change the interface, logo, links and calculations, and distribute a
-commercial version under your own brand. No visible SmiCut attribution is required.
-Keep the MIT license and copyright notice with your distribution. See
-[REBRANDING.md](REBRANDING.md) and [LICENSE](LICENSE).
+1. Choose **Download** next to your language above.
+2. Find the downloaded `.html` file in your Downloads folder.
+3. Double-click it to open SmiCalc in your web browser. If asked, choose a browser.
 
-## Material Selector on your website
+If you chose the all-language ZIP, extract it first, then open the HTML file for
+your language. The included `START-HERE.txt` lists every filename and language.
+You can keep the HTML file on your computer and use the calculators without internet.
+Choose the material category manually when working offline.
 
-Email [oliver@smicut.se](mailto:oliver@smicut.se?subject=Material%20Selector%20website%20access)
-with your company name, website address(es), program and language to request access
-to SmiCut's optional AI material service. Once SmiCut confirms the approved website,
-the app connects automatically. **No API key is needed.** The existing limit of
-30 requests per minute per IP address remains.
+**The AI Material Selector needs internet and an approved website.** Opening the
+downloaded file on your computer does not enable the hosted AI service. Use SmiCalc
+online for that feature, or [request access for your own website](MATERIAL_SELECTOR.md).
 
-Follow the [three-step Material Selector guide](MATERIAL_SELECTOR.md).
-The calculators also work without AI access by selecting materials manually.
-Hosted service access is separate from the MIT software license.
+Need more help? See [opening, updating and using SmiCalc on your website](docs/getting-started.md).
 
-## Development and verification
+## Make it your own
 
-Use Node.js 20 or later and Python 3.10 or later:
+You may use your own company name, logo, colours and links, change the program,
+and offer your version to customers, including commercially. Your changes can stay private.
 
-```bash
-npm ci --ignore-scripts
-npx playwright install chromium
-python3 -m pip install -r requirements.txt
-python3 Translation/tools/verify_localized_apps.py --locales all
-npm test
-```
+There is no built-in branding editor. Changing the app requires editing its HTML,
+CSS or JavaScript; a web developer can help. Keep the included copyright and MIT
+license notice in the file. It does not need to appear visibly in your interface.
 
-Read [docs/development.md](docs/development.md) for source files, localization and
-desktop/mobile screenshot checks. Read the relevant `* Data and Formulas.md`
-before changing a calculation. Cutting data are starting recommendations and
-must be adapted to the actual tool, material, setup and machine.
+[**Read the simple customization guide**](REBRANDING.md) · [**Put SmiCalc on your website**](docs/getting-started.md#use-smicalc-on-your-website)
 
-Issues and focused pull requests are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
+## Help and further information
+
+- **Using SmiCalc:** email [info@smicut.se](mailto:info@smicut.se).
+- **AI access for your website:** follow the [Material Selector guide](MATERIAL_SELECTOR.md).
+- **Report a problem or suggest an improvement:** [open an issue](https://github.com/SmiCut/smicalc/issues).
+- **For developers:** [source files, tests and localization](docs/development.md), [contributing](CONTRIBUTING.md), and [MIT license](LICENSE).
+- **Thread milling and CNC programs:** see [SmiProg](https://github.com/SmiCut/smiprog).
+
+Cutting data are starting recommendations. Check them for your tool, material,
+machine and setup before machining.
