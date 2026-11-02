@@ -60,3 +60,29 @@ Translation workbook rows 246–293 contain operation-time and material-removal
 text; row 294 contains minimum-three-pass validation. Start-card descriptions
 come from the workbook rather than generator overrides. EC/PC labels use HSSE
 and HSSE-PM. Source files and generation inputs are published together.
+
+## Install development tools and run checks
+
+Use Node.js 20 or later and Python 3.10 or later:
+
+```bash
+npm ci --ignore-scripts
+npx playwright install chromium
+python3 -m pip install -r requirements.txt
+python3 Translation/tools/verify_localized_apps.py --locales all
+npm test
+```
+
+## Publish user downloads
+
+Run `python3 tools/build_downloads.py` to create individual HTML downloads, the
+all-language ZIP, checksums and release notes in `dist/downloads/`. The builder
+copies the app files without modifying their contents or embedded MIT notices.
+`docs/downloads.json` maps source files, native language labels and approved online
+URLs to stable download filenames. Keep the README language table aligned with it.
+
+Attach every generated HTML file, `smicalc-apps.zip` and `SMICALC-SHA256SUMS` to
+each new release. Use the generated `RELEASE-NOTES.md` as the user-facing start of
+the release description and add version-specific changes. Keep these filenames
+stable: the README uses `/releases/latest/download/` links. Publish the complete
+asset set before marking a new release latest. Do not upload only changed languages.
