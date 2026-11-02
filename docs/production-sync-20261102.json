@@ -1,0 +1,166 @@
+{
+  "checked_date": "2026-11-02",
+  "comparison": "Widget DOM normalized for whitespace; inline JS and CSS normalized using esbuild, decoding WordPress data-src scripts. MIT header retained in public source.",
+  "versions": [
+    {
+      "locale": "id",
+      "url": "https://smicut.com/id/smicalc-kalkulator-cutting-data/",
+      "file": "Translation/Indonesiska/smicut cutting data app-id.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "d9d5feb646b122c26401b0f0cbd717477e4cd441e41a5808e58f7453cfe05176"
+    },
+    {
+      "locale": "da",
+      "url": "https://smicut.com/da/smicalc-beregner-til-skaeredata/",
+      "file": "Translation/Danska/smicut cutting data app-da.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "a40e4bc3d1c75c33f8b77a3aac2f74f2d83f4115185be8557eebe9b553bbe0e2"
+    },
+    {
+      "locale": "de",
+      "url": "https://smicut.com/de/smicalc-schnittdatenrechner/",
+      "file": "Translation/Tyska/smicut cutting data app-de.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "15c03d5508400863c0b3f95b6d28aecf09a3e8f6324ce076de529307778f47e6"
+    },
+    {
+      "locale": "en-GB",
+      "url": "https://smicut.com/en/smicalc-cutting-data-calculator/",
+      "file": "Translation/English/smicut cutting data app-eng.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "f66119702fc141e71b867383f7c92f759b1388a35f0f217501e91af3c8c4d5ef"
+    },
+    {
+      "locale": "en-ZA",
+      "url": "https://smicut.com/en-za/smicalc-cutting-data-calculator-2/",
+      "file": "Translation/English ZA/smicut cutting data app-en-za.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "2fa902b60cc49bef71c7ff09c74676377cef0fd9bb28b1f2f01e526e891db571"
+    },
+    {
+      "locale": "es-GL",
+      "url": "https://smicut.com/es-gl/smicalc-calculadora-de-datos-de-corte-2/",
+      "file": "Translation/Spanska Global/smicut cutting data app-es-gl.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "1019e78b06ecc7400f8dcc279a1a04d8bb9db39affbc25a35ddd8ff721bd13e5"
+    },
+    {
+      "locale": "es-ES",
+      "url": "https://smicut.com/es/smicalc-calculadora-de-datos-de-corte/",
+      "file": "Translation/Spanska/smicut cutting data app-es.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "30d69a708e24329783dd13f8e080eb37063b446cddd8a261e38da3e34d25be8f"
+    },
+    {
+      "locale": "fr-FR",
+      "url": "https://smicut.com/fr/smicalc-calculateur-de-donnees-de-coupe/",
+      "file": "Translation/Franska/smicut cutting data app-fr.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "7683b5fa5c9a8c99032ad38f4887a5eb923fc73e03230d112f5107b5c9dc630d"
+    },
+    {
+      "locale": "fr-BE",
+      "url": "https://smicut.com/fr-be/smicalc-calculateur-de-donnees-de-coupe-2/",
+      "file": "Translation/Franska Belgien/smicut cutting data app-fr-be.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "0eb6ffb45adb174982cc88cfa87ce1ec54bcfdbc097591502cc143613a87c6ba"
+    },
+    {
+      "locale": "it",
+      "url": "https://smicut.com/it/smicalc-calcolatore-dei-dati-di-taglio/",
+      "file": "Translation/Italienska/smicut cutting data app-it.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "ea6c1da3f0ab46b6e2e360994aad9938a4d2227b9fb4dd5baa1b4d280680250c"
+    },
+    {
+      "locale": "hu",
+      "url": "https://smicut.com/hu/smicalc-forgacsolasi-adatok-kalkulatora/",
+      "file": "Translation/Ungerska/smicut cutting data app-hu.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "8aa0e9fa82cdf20fcba1f0c2f3017799fe1d04c17d33cd52aa2d40d3b0db3fe2"
+    },
+    {
+      "locale": "nl-BE",
+      "url": "https://smicut.com/nl-be/smicalc-snijgegevenscalculator/",
+      "file": "Translation/Nederlandska Belgien/smicut cutting data app-nl-be.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "94c821d3ba2cfe356acac6932cfc5b6df3419293990531b0c7ee0f5980561a62"
+    },
+    {
+      "locale": "nl-NL",
+      "url": "https://smicut.com/nl/smicalc-snijgegevenscalculator-2/",
+      "file": "Translation/Nederlandska/smicut cutting data app-nl.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "1bf83fd058205b2d17e634e542af8fab4819e36c0b62382931d9e74d1fb5087c"
+    },
+    {
+      "locale": "pl",
+      "url": "https://smicut.com/pl/smicalc-kalkulator-parametrow-skrawania/",
+      "file": "Translation/Polska/smicut cutting data app-pl.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "3adb31dff27a4185a64983fa3954b4130d1fc2db861ed574156c09db2cddddbb"
+    },
+    {
+      "locale": "sv",
+      "url": "https://smicut.com/sv/smicalc-berakningsverktyg-for-skardata/",
+      "file": "Translation/Svenska/smicut cutting data app-se.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "0fad495cc81f2048e1159af8e954dd52cb29a728318b1d9a85ee6c2402dd8839"
+    },
+    {
+      "locale": "ru",
+      "url": "https://smicut.com/ru/smicalc-%d0%ba%d0%b0%d0%bb%d1%8c%d0%ba%d1%83%d0%bb%d1%8f%d1%82%d0%be%d1%80-%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%be%d0%b2-%d1%80%d0%b5%d0%b7%d0%b0%d0%bd%d0%b8%d1%8f/",
+      "file": "Translation/Ryska/smicut cutting data app-ru.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "584c3d0ec918b636449b28854cf52cb0673a4a6b6e4bc187b220041b8f875820"
+    },
+    {
+      "locale": "zh-CN",
+      "url": "https://smicut.com/zh/smicalc-%e5%88%87%e5%89%8a%e5%8f%82%e6%95%b0%e8%ae%a1%e7%ae%97%e5%99%a8/",
+      "file": "Translation/Kinesiska Simplified/smicut cutting data app-zh.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "e8935edc3864ae752df4b3f2cc2ab2e59f5c045dee4391ee6d3e80aa40fdb474"
+    },
+    {
+      "locale": "zh-TW",
+      "url": "https://smicut.com/zh-tw/smicalc-%e5%88%87%e5%89%8a%e5%8f%83%e6%95%b8%e8%a8%88%e7%ae%97%e5%99%a8/",
+      "file": "Translation/Kinesiska Traditional/smicut cutting data app-zh-tw.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "146f6231cce303ee893c74c01309ef4d9c80b9ac7eda943da1acbf03bd9f8df0"
+    },
+    {
+      "locale": "ja",
+      "url": "https://smicut.com/ja/%e3%82%b9%e3%83%9f%e3%82%ab%e3%83%ab%e3%82%af-%e5%88%87%e5%89%8a%e6%9d%a1%e4%bb%b6%e8%a8%88%e7%ae%97%e3%83%84%e3%83%bc%e3%83%ab/",
+      "file": "Translation/Japanska/smicut cutting data app-ja.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "60b8687a20c5e4f30664a9def15303b8833db43739c5a0f6a38099f6d2cbec6c"
+    },
+    {
+      "locale": "ko",
+      "url": "https://smicut.com/ko/smicalc-%ec%a0%88%ec%82%ad-%eb%8d%b0%ec%9d%b4%ed%84%b0-%ea%b3%84%ec%82%b0%ea%b8%b0/",
+      "file": "Translation/Koreanska/smicut cutting data app-ko.html",
+      "widget_dom_matches": true,
+      "all_script_and_style_blocks_match": true,
+      "local_production_sha256": "2225ec8dfdae989660b3705b23d6eb652fb4dd8b414c2e17a39d391980115c3b"
+    }
+  ]
+}
