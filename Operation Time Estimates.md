@@ -64,8 +64,10 @@ statistical confidence intervals, or CNC program recommendations.
 - Calculated times have one decimal. Positive results below 0.1 show '< 0.1 sec'.
   Cycle intervals round outwards to tenths if the upper bound is below 10 sec,
   otherwise to whole seconds, with a positive, non-collapsed display interval.
-- Results, entered depths, variation notes and displayed timing assumptions are
-  copied. The assumptions are available in a keyboard-accessible disclosure.
+- Results and entered depths are copied. Explanatory cycle-time content (the
+  estimate heading, introduction, calculation assumptions and RPM note) is not
+  included in clipboard output. It remains available in the keyboard-accessible
+  on-screen disclosure, regardless of whether that disclosure is open or closed.
 
 ## Milling and grooving
 

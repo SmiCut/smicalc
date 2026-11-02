@@ -198,7 +198,7 @@ base passes = max(4, round(interpolated pass count))
 If the user enters an own number of passes:
 
 ```text
-used passes = own passes, minimum 4, maximum 27
+used passes = integer own passes, minimum 3, maximum 27
 ```
 
 ### FourCut Pass Reduction
@@ -209,7 +209,7 @@ Triangular inserts use the base pass count unchanged. FourCut applies the materi
 FourCut recommended passes = max(4, round(base passes * (1 - reduction / 100)))
 ```
 
-Use the actual thread pitch in mm (25.4 / TPI for inch threads), including NPT/NPTF; their special pass pitch remains used only for the base count. Interpolate the reduction linearly between the listed pitches. Below 1.0 mm use the 1.0 mm percentage; above 3.5 mm use the 3.5 mm percentage. The supplied 0–5% ranges are represented by 2.5%. Round to the nearest integer, with halves rounded up. The existing minimum of four passes is preserved to match the available infeed distributions. Manual pass overrides remain unchanged and are not reduced again.
+Use the actual thread pitch in mm (25.4 / TPI for inch threads), including NPT/NPTF; their special pass pitch remains used only for the base count. Interpolate the reduction linearly between the listed pitches. Below 1.0 mm use the 1.0 mm percentage; above 3.5 mm use the 3.5 mm percentage. The supplied 0–5% ranges are represented by 2.5%. Round to the nearest integer, with halves rounded up. Automatic recommendations retain a minimum of four passes. Manual integer overrides may select three passes and are not reduced again.
 
 Percent reductions, keyed by the app's canonical material keys:
 
@@ -355,3 +355,75 @@ return motion and synchronization. No extra spring passes. Invalid optional
 input hides times/disables copy; material exclusions still suppress times.
 Times, length and assumptions are copied. Exact interval formulas and limitations:
 [Operation Time Estimates](Operation%20Time%20Estimates.md).
+
+## Manual three-pass infeed (2026-10-27)
+
+Applies only when the user manually selects exactly 3 passes, for both insert
+choices. FourCut remains external-only; internal turning uses Triangular as
+before. Automatic recommendations are unchanged. Distributions for 4–27 passes
+remain percentage-based except for the explicit four-pass catalogue cases below.
+Blank and fractional overrides use the automatic recommendation. The English
+validation rule for 1 or 2 passes is documented below.
+
+User-provided catalogue screenshot supplies these **incremental radial depths**:
+
+| External profile | Pass 1 | Pass 2 | Pass 3 | Sum |
+|---|---:|---:|---:|---:|
+| Metric P1.0 | 0.24 | 0.21 | 0.18 | 0.63 |
+| Metric P1.5 | 0.43 | 0.30 | 0.21 | 0.94 |
+| Metric P2.0 | 0.57 | 0.40 | 0.28 | 1.25 |
+| Whitworth 14 TPI | 0.55 | 0.38 | 0.25 | 1.18 |
+
+All dimensions are mm. Exact catalogue values take precedence over the nominal
+profile-depth sum; do not renormalize the external metric/Whitworth anchors.
+Display and copy retain the existing three-decimal format.
+
+For other Metric/Unified pitches, interpolate each pass linearly between the
+P1.0/P1.5/P2.0 anchors. Below P1.0 scale the P1.0 row by P/1.0; above P2.0 scale
+the P2.0 row by P/2.0. This avoids negative or increasing passes from extrapolation.
+Internal Metric/Unified values scale the result by 0.541/0.613, using the existing
+internal/external profile-depth ratio (including the same relative catalogue
+allowance). No new profile-depth formula is introduced.
+
+For G, G-other and BSPT, scale the Whitworth row by:
+`actual profile depth / (16.256/14)` (equivalently 14/TPI). Existing internal and
+external Whitworth profile depths are identical, so their infeed values also are.
+The 14 TPI anchor must not be applied to NPT/NPTF or Unified 14 TPI threads.
+For NPT, NPTF and PG, use the interpolated metric row's proportions normalized to
+the existing standard-specific profile depth, for both external and internal.
+
+Non-anchor distributions are derived estimates, not additional catalogue data.
+Three-pass time calculations use N=3, and copied results use the same depths as
+shown on screen. Source: user screenshot `Skärmavbild 2026-10-27 kl. 10.50.55.png`.
+
+## Manual four-pass catalogue exceptions (2026-10-27)
+
+When the user manually enters exactly **4 passes**, use the following exact
+incremental radial depths for **external** turning with either Triangular or
+FourCut. Source: user screenshot `Skärmavbild 2026-10-27 kl. 10.51.07.png`.
+
+| Profile | TPI | Pass 1 | Pass 2 | Pass 3 | Pass 4 |
+|---|---:|---:|---:|---:|---:|
+| G / G-other (Whitworth parallel) | 11 | 0.55 | 0.38 | 0.32 | 0.25 |
+| BSPT (tapered pipe) | 11 | 0.56 | 0.39 | 0.33 | 0.26 |
+
+All values are mm. Do not rescale/normalize these rows to nominal profile depth.
+Internal turning, other pitches/standards (including NPT/NPTF and Unified at
+11 TPI), automatic recommendations, and all other pass counts retain their
+existing calculations. The two rows are separate; BSPT must not use the G row.
+Screen and clipboard both use these values with the existing three-decimal
+format. Time estimates still use the selected count N=4; no time-model change.
+
+## English minimum-pass validation (2026-10-27)
+
+Manual inputs 1 and 2 retain the entered value but set aria-invalid/custom
+validity, show a red border, and display "Enter at least 3 passes." in a reserved
+slot immediately to the right. The slot exists before the error, including on
+mobile, so the row does not grow. The radial-infeed box and its heading remain
+visible; only its pass list becomes invisible/inaccessible, retaining its space.
+Operation-time results also become invisible with their space retained. Copying is disabled
+and its stored text cleared. Recalculation resumes when corrected or cleared.
+Blank input restores the recommendation. Unsupported material retains its normal
+no-recommendation behaviour. Other validation rules are unchanged.
+The validation is included in every localized app. Its inline message is
+maintained in translation workbook row 294 (added 2026-10-27).

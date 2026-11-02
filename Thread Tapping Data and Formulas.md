@@ -16,8 +16,8 @@ The Thread Tapping calculator uses these inputs:
    - `TT` - Spiral Point Taps for Through Holes
    - `TB` - Spiral Flute Taps for Blind Holes
 6. Grade
-   - `EC` - General Tapping
-   - `PC` - Trouble-Free Tapping and Harder Materials
+   - `EC` - HSSE
+   - `PC` - HSSE-PM
 
 The user can also enter an own cutting speed.
 

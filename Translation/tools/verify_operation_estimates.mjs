@@ -52,6 +52,7 @@ try {
  await material('scd-groove-material','steel-low-carbon');
  // Thread turning: M10x1.5, 1000 rpm, 6 passes and 36 mm => 8.64 sec.
  await tab('threadturning');
+ await page.locator('#scd-turn-depth-details > summary').click();
  await hidden('turn');
  await page.locator('#scd-turn-thread-profile').selectOption('metricFine');
  await fill('scd-turn-thread-diameter',10);await fill('scd-turn-thread-pitch',1.5);
@@ -69,23 +70,29 @@ try {
  await fill('scd-turn-operation-depth',36);
  // Timo reference: M10x1.5, 600 rpm, programmed travel 20 mm => 2.6667 sec, down + up.
  await tab('tapping');await hidden('tap');
+ await page.locator('#scd-tap-depth-details > summary').click();
  await page.locator('#scd-tap-thread-profile').selectOption('metricFine');
  await fill('scd-tap-thread-diameter',10);await fill('scd-tap-thread-pitch',1.5);
  await fill('scd-tap-custom-speed',6*Math.PI);await fill('scd-tap-operation-depth',20);
  close(num(await val('tap')),2.6667);await ordered('tap');
- assert((await copy('tap','scd-tap-copy')).includes('downstroke and return'));
+ assert(!(await copy('tap','scd-tap-copy')).includes('tapping in and out'));
  await radio('scd-tap-type','tb');close(num(await val('tap')),2.6667);
  await fill('scd-tap-custom-speed',10*Math.PI);
  await material('scd-tap-material','steel-hardened-hrc65');await hidden('tap');
  await material('scd-tap-material','steel-low-carbon');
  // Drilling uses exactly the entered travel; through coolant removes peck comparison.
  await tab('drills');await hidden('drill');
+ await page.locator('#scd-drill-depth-details > summary').click();
  await fill('scd-custom-speed',10*Math.PI);await fill('scd-custom-feed-rev',.2);
  await fill('scd-drill-operation-depth','20,0');
  close(num(await val('drill')),6);
  assert.equal(await container('drill').locator('.scd-result-row').count(),3);checks++;
  await ordered('drill');const peckRange=await val('drill',2);assert(peckRange.includes('–'));
- const copied=await copy('drill','scd-copy');assert(copied.includes('Peck drilling')&&copied.includes('programmed travel')&&!copied.includes('140°'));
+ const copied=await copy('drill','scd-copy');
+ assert(copied.includes('Peck drilling') && copied.includes(peckRange));
+ for (const explanation of await container('drill').locator('.scd-tap-cycle-body strong, .scd-tap-cycle-body li').allTextContents()) {
+  assert(!copied.includes(explanation), 'Cycle explanation must stay on screen only');checks++;
+ }
  await radio('scd-coolant','with');assert.equal(await container('drill').locator('.scd-result-row').count(),2);checks++;
  await page.locator('#scd-copy').click();assert(!(await page.evaluate(()=>window.__copied)).includes('Peck drilling'));checks++;
  await radio('scd-coolant','without');await fill('scd-drill-operation-depth','19.99');assert.equal(await container('drill').locator('.scd-result-row').count(),2);checks++;
@@ -146,11 +153,11 @@ try {
   for(const [kind,section] of [['drill','drills'],['tap','tapping'],['turn','threadturning'],['groove','grooving'],['endmill','endmills']]) {
    await tab(section);
    const disclosure=container(kind).locator('summary');
-   if(await disclosure.count()) await disclosure.click();
+   for(const summary of await disclosure.all()) await summary.click();
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1);
    assert(!overflow,`${kind} overflows at ${width}`);checks++;
    if(out) await page.screenshot({path:path.join(out,`${kind}-${width}.png`),fullPage:true});
-   if(await disclosure.count()) await disclosure.click();
+   for(const summary of await disclosure.all()) await summary.click();
   }
  }
  assert.deepEqual(errors,[]);

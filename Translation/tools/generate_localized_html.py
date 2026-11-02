@@ -323,8 +323,6 @@ UI_TRANSLATION_OVERRIDES = {
         "Internal": "Ulir dalam",
         "Insert type": "Jenis insert",
         "Triangular": "Segitiga",
-        "EC - General Tapping": "EC - Tapping umum",
-        "PC - Harder Materials": "PC - Material lebih keras",
         "RC - Form Taps": "RC - Form taps",
     },
     # Japanese SmiCut product names follow the official Japanese website's
@@ -751,135 +749,97 @@ START_PAGE_LABELS = {
     "sv": {
         "smiprog": "SmiProg - Gängfräsning",
         "milling_title": "Fräsning",
-        "milling_desc": "Beräkna skärhastighet, matning per tand, spindelvarvtal och bordsmatning för solida hårdmetallfräsar baserat på diameter, antal skär, ap och ae.",
         "drilling_title": "Borrning",
-        "drilling_desc": "Beräkna skärhastighet, matning per varv, spindelvarvtal och bordsmatning för solida hårdmetallborr med valfria egna värden.",
     },
     "es": {
         "smiprog": "SmiProg - Fresado de roscas",
         "milling_title": "Fresado",
-        "milling_desc": "Calcule la velocidad de corte, el avance por labio, la velocidad del husillo y el avance de mesa para fresas de metal duro integral utilizando el diámetro, el número de labios, ap y ae.",
         "drilling_title": "Taladrado",
-        "drilling_desc": "Calcule la velocidad de corte, el avance por revolución, la velocidad del husillo y el avance de mesa para brocas de metal duro integral con valores propios opcionales.",
     },
     "es-gl": {
         "smiprog": "SmiProg - Fresado de roscas",
         "milling_title": "Fresado",
-        "milling_desc": "Calcule la velocidad de corte, el avance por filo, la velocidad del husillo y el avance de mesa para fresas de carburo sólido utilizando el diámetro, el número de filos, ap y ae.",
         "drilling_title": "Taladrado",
-        "drilling_desc": "Calcule la velocidad de corte, el avance por revolución, la velocidad del husillo y el avance de mesa para brocas de carburo sólido con valores propios opcionales.",
     },
     "id": {
         "smiprog": "SmiProg - Thread Milling",
         "milling_title": "Milling",
-        "milling_desc": "Hitung cutting speed, feed per flute, spindle speed, dan table feed untuk solid carbide end mills menggunakan diameter, jumlah flute, ap, dan ae.",
         "drilling_title": "Drilling",
-        "drilling_desc": "Hitung cutting speed, feed per revolution, spindle speed, dan table feed untuk solid carbide drills dengan opsi nilai sendiri.",
     },
     "da": {
         "smiprog": "SmiProg - Gevindfræsning",
         "milling_title": "Fræsning",
-        "milling_desc": "Beregn skærehastighed, tilspænding pr. tand, spindelomdrejningstal og bordtilspænding for pindfræsere i solid hårdmetal baseret på diameter, antal skær, ap og ae.",
         "drilling_title": "Boring",
-        "drilling_desc": "Beregn skærehastighed, tilspænding pr. omdrejning, spindelomdrejningstal og bordtilspænding for bor i solid hårdmetal med valgfrie egne værdier.",
     },
     "de": {
         "smiprog": "SmiProg - Gewindefräsen",
         "milling_title": "Fräsen",
-        "milling_desc": "Berechnen Sie Schnittgeschwindigkeit, Vorschub pro Zahn, Spindeldrehzahl und Tischvorschub für Vollhartmetall-Schaftfräser anhand von Durchmesser, Schneidenzahl, ap und ae.",
         "drilling_title": "Bohren",
-        "drilling_desc": "Berechnen Sie Schnittgeschwindigkeit, Vorschub pro Umdrehung, Spindeldrehzahl und Tischvorschub für Vollhartmetallbohrer mit optionalen eigenen Werten.",
     },
     "en-za": {
         "smiprog": "SmiProg - Thread Milling",
         "milling_title": "Milling",
-        "milling_desc": "Calculate cutting speed, feed per flute, spindle speed and table feed for solid carbide end mills using diameter, flutes, ap and ae.",
         "drilling_title": "Drilling",
-        "drilling_desc": "Calculate cutting speed, feed per revolution, spindle speed and table feed for solid carbide drills with optional own values.",
     },
     "fr-be": {
         "smiprog": "SmiProg - Fraisage de filets",
         "milling_title": "Fraisage",
-        "milling_desc": "Calculez la vitesse de coupe, l'avance par dent, la vitesse de broche et l'avance de table pour les fraises en carbure monobloc à partir du diamètre, du nombre de dents et des valeurs ap et ae.",
         "drilling_title": "Perçage",
-        "drilling_desc": "Calculez la vitesse de coupe, l'avance par tour, la vitesse de broche et l'avance de table pour les forets en carbure monobloc avec vos propres valeurs en option.",
     },
     "fr": {
         "smiprog": "SmiProg - Fraisage de filets",
         "milling_title": "Fraisage",
-        "milling_desc": "Calculez la vitesse de coupe, l'avance par dent, la vitesse de broche et l'avance de table pour les fraises en carbure monobloc à partir du diamètre, du nombre de dents et des valeurs ap et ae.",
         "drilling_title": "Perçage",
-        "drilling_desc": "Calculez la vitesse de coupe, l'avance par tour, la vitesse de broche et l'avance de table pour les forets en carbure monobloc avec vos propres valeurs en option.",
     },
     "it": {
         "smiprog": "SmiProg - Fresatura dei filetti",
         "milling_title": "Fresatura",
-        "milling_desc": "Calcola la velocità di taglio, l'avanzamento per dente, la velocità del mandrino e l'avanzamento tavola per frese in metallo duro integrale utilizzando diametro, numero di taglienti, ap e ae.",
         "drilling_title": "Foratura",
-        "drilling_desc": "Calcola la velocità di taglio, l'avanzamento per giro, la velocità del mandrino e l'avanzamento tavola per punte in metallo duro integrale con valori personalizzati opzionali.",
     },
     "hu": {
         "smiprog": "SmiProg - Menetmarás",
         "milling_title": "Marás",
-        "milling_desc": "Számítsa ki a forgácsolási sebességet, a fogankénti előtolást, az orsófordulatszámot és az asztalelőtolást keményfém ujjmarókhoz az átmérő, az élek száma, az ap és az ae alapján.",
         "drilling_title": "Fúrás",
-        "drilling_desc": "Számítsa ki a forgácsolási sebességet, a fordulatonkénti előtolást, az orsófordulatszámot és az asztalelőtolást keményfém csigafúrókhoz, opcionálisan saját értékekkel.",
     },
     "nl-be": {
         "smiprog": "SmiProg - Draadfrezen",
         "milling_title": "Frezen",
-        "milling_desc": "Bereken snijsnelheid, voeding per tand, spiltoerental en tafelvoeding voor volhardmetalen vingerfrezen op basis van diameter, aantal tanden, ap en ae.",
         "drilling_title": "Boren",
-        "drilling_desc": "Bereken snijsnelheid, voeding per omwenteling, spiltoerental en tafelvoeding voor volhardmetalen boren met optionele eigen waarden.",
     },
     "nl": {
         "smiprog": "SmiProg - Draadfrezen",
         "milling_title": "Frezen",
-        "milling_desc": "Bereken snijsnelheid, voeding per tand, spiltoerental en tafelvoeding voor volhardmetalen vingerfrezen op basis van diameter, aantal snijkanten, ap en ae.",
         "drilling_title": "Boren",
-        "drilling_desc": "Bereken snijsnelheid, voeding per omwenteling, spiltoerental en tafelvoeding voor volhardmetalen boren met optionele eigen waarden.",
     },
     "pl": {
         "smiprog": "SmiProg - Frezowanie gwintów",
         "milling_title": "Frezowanie",
-        "milling_desc": "Oblicz prędkość skrawania, posuw na ostrze, prędkość obrotową wrzeciona i posuw stołu dla frezów z węglików spiekanych na podstawie średnicy, liczby ostrzy, ap i ae.",
         "drilling_title": "Wiercenie",
-        "drilling_desc": "Oblicz prędkość skrawania, posuw na obrót, prędkość obrotową wrzeciona i posuw stołu dla wierteł z węglików spiekanych z opcjonalnymi własnymi wartościami.",
     },
     "ru": {
         "smiprog": "SmiProg - Фрезерование резьбы",
         "milling_title": "Фрезерование",
-        "milling_desc": "Рассчитайте скорость резания, подачу на зуб, частоту вращения шпинделя и подачу стола для монолитных твердосплавных фрез на основе диаметра, числа зубьев, ap и ae.",
         "drilling_title": "Сверление",
-        "drilling_desc": "Рассчитайте скорость резания, подачу на оборот, частоту вращения шпинделя и подачу стола для монолитных твердосплавных сверл с дополнительными собственными значениями.",
     },
     "zh": {
         "smiprog": "SmiProg - 螺纹铣削",
         "milling_title": "铣削",
-        "milling_desc": "根据直径、刃数、ap 和 ae，为整体硬质合金立铣刀计算切削速度、每齿进给量、主轴转速和工作台进给量。",
         "drilling_title": "钻削",
-        "drilling_desc": "使用可选的自定义值，为整体硬质合金钻头计算切削速度、每转进给量、主轴转速和工作台进给量。",
     },
     "zh-tw": {
         "smiprog": "SmiProg - 螺紋銑削",
         "milling_title": "銑削",
-        "milling_desc": "根據直徑、刃數、ap 和 ae，為鎢鋼銑刀計算切削速度、每刃進給量、主軸轉速和工作台進給。",
         "drilling_title": "鑽削",
-        "drilling_desc": "使用可選的自訂值，為鎢鋼鑽頭計算切削速度、每轉進給量、主軸轉速和工作台進給。",
     },
     "ja": {
         "smiprog": "スミプログ - ねじフライス加工",
         "milling_title": "フライス加工",
-        "milling_desc": "超硬ソリッドエンドミルの切削速度、刃当たり送り、主軸回転数、テーブル送りを、工具径、刃数、ap、aeに基づいて計算します。",
         "drilling_title": "穴あけ",
-        "drilling_desc": "超硬ソリッドドリルの切削速度、1回転当たり送り、主軸回転数、テーブル送りを、任意の独自値で計算します。",
     },
     "ko": {
         "smiprog": "SmiProg - 나사 밀링",
         "milling_title": "밀링",
-        "milling_desc": "초경 엔드밀용 절삭 속도, 날당 이송, 스핀들 속도 및 테이블 이송을 직경, 날 수, ap 및 ae를 기준으로 계산합니다.",
         "drilling_title": "드릴링",
-        "drilling_desc": "초경 드릴용 절삭 속도, 회전당 이송, 스핀들 속도 및 테이블 이송을 필요 시 직접 입력한 값으로 계산합니다.",
     },
 }
 
@@ -1330,13 +1290,13 @@ def apply_tap_type_labels(content: str, locale: str) -> str:
     return content
 
 
-def replace_start_card_copy(content: str, class_name: str, title: str, description: str) -> str:
+def replace_start_card_copy(content: str, class_name: str, title: str) -> str:
     pattern = re.compile(
         rf'(<button type="button" class="scd-start-card scd-start-card-button {re.escape(class_name)}" '
         r'data-scd-section="[^"]+">\s*<strong>)'
         r'[\s\S]*?'
         r'(<span class="scd-card-arrow">➜</span></strong>\s*<span>)'
-        r'[\s\S]*?'
+        r'([\s\S]*?)'
         r'(</span>)',
         re.MULTILINE,
     )
@@ -1346,8 +1306,8 @@ def replace_start_card_copy(content: str, class_name: str, title: str, descripti
             + html.escape(title, quote=False)
             + " "
             + match.group(2)
-            + html.escape(description, quote=False)
-            + match.group(3)
+            + match.group(3)  # Keep the description translated from the workbook.
+            + match.group(4)
         ),
         content,
         count=1,
@@ -1385,13 +1345,11 @@ def apply_start_page_labels(content: str, locale: str) -> str:
         content,
         "scd-start-card-endmills",
         labels["milling_title"],
-        labels["milling_desc"],
     )
     return replace_start_card_copy(
         content,
         "scd-start-card-drills",
         labels["drilling_title"],
-        labels["drilling_desc"],
     )
 
 

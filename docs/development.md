@@ -49,3 +49,14 @@ Website approval requires no browser API key. Preserve `message`, `language`,
 `history` and the material-key response fields. To use your own compatible service,
 change the `API_URL` constant in the English HTML, synchronize both English sources
 and regenerate localized apps; never embed an AI-provider secret in HTML.
+
+## Production synchronization, 2026-11-02
+
+All 20 English/localized app variants were compared against their live smicut.com
+pages: widget markup, both JavaScript blocks and all widget style blocks match
+after normalizing WordPress formatting. The public copies retain the MIT notice.
+
+Translation workbook rows 246–293 contain operation-time and material-removal
+text; row 294 contains minimum-three-pass validation. Start-card descriptions
+come from the workbook rather than generator overrides. EC/PC labels use HSSE
+and HSSE-PM. Source files and generation inputs are published together.
