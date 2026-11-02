@@ -86,3 +86,10 @@ each new release. Use the generated `RELEASE-NOTES.md` as the user-facing start 
 the release description and add version-specific changes. Keep these filenames
 stable: the README uses `/releases/latest/download/` links. Publish the complete
 asset set before marking a new release latest. Do not upload only changed languages.
+
+## Documentation map
+
+See [the documentation index](README.md) for user guides and technical references.
+Contribution and private security-reporting instructions are in `.github/`.
+Calculator formula specifications are grouped in [`docs/formulas/`](formulas/).
+The [WordPress embedding guide](wordpress-embed-design-guide.md) is in `docs/`.
