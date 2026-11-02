@@ -54,7 +54,7 @@ and regenerate localized apps; never embed an AI-provider secret in HTML.
 
 All 20 English/localized app variants were compared against their live smicut.com
 pages: widget markup, both JavaScript blocks and all widget style blocks match
-after normalizing WordPress formatting. The public copies retain the MIT notice.
+after normalizing page-builder formatting. The public copies retain the MIT notice.
 
 Translation workbook rows 246–293 contain operation-time and material-removal
 text; row 294 contains minimum-three-pass validation. Start-card descriptions
@@ -92,4 +92,4 @@ asset set before marking a new release latest. Do not upload only changed langua
 See [the documentation index](README.md) for user guides and technical references.
 Contribution and private security-reporting instructions are in `.github/`.
 Calculator formula specifications are grouped in [`docs/formulas/`](formulas/).
-The [WordPress embedding guide](wordpress-embed-design-guide.md) is in `docs/`.
+The [Website embedding guide](website-embedding.md) is in `docs/`.
