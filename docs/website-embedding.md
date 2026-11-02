@@ -1,8 +1,17 @@
-# SmiCut Cutting Data App - WordPress Embed Design Guide
+# Embed SmiCalc on your website
 
-This guide explains how to continue designing and extending the SmiCut Cutting Data app so it works reliably when embedded in WordPress.
+Use the same complete HTML file offered in the language download table. Open it
+in a plain-text editor and paste its full contents into a Raw HTML / Custom HTML
+block that preserves styles and scripts. Keep one app instance per page. No
+iframe or app-specific plugin is needed. The same file opens independently.
 
-The main goal is to prevent WordPress theme CSS from changing the app layout, colors, input sizes, text spacing, borders, and result cards.
+Back up your page before replacing the app block. Publish, clear the affected
+page cache, then check calculators, copying, images and mobile layout. A visual
+rich-text block may rewrite the code; use your editor's raw-code integration.
+
+The remaining guide explains how to preserve styling when extending the app.
+
+The main goal is to prevent host website theme CSS from changing the app layout, colors, input sizes, text spacing, borders, and result cards.
 
 ## Core Principle
 
@@ -32,9 +41,9 @@ Use scoped selectors instead:
 .scd-result-row { ... }
 ```
 
-## WordPress CSS Problems We Found
+## host website CSS Problems We Found
 
-WordPress themes often apply styles to:
+Website themes often apply styles to:
 
 - `p`
 - `button`
@@ -60,7 +69,7 @@ These can create problems such as:
 
 Do not use `<p>` elements for result rows that are filled by JavaScript.
 
-WordPress themes often style paragraphs aggressively. This caused the Thread Tapping `Grade` card to display incorrectly.
+Website themes often style paragraphs aggressively. This caused the Thread Tapping `Grade` card to display incorrectly.
 
 Use this:
 
@@ -132,7 +141,7 @@ At the top of the app CSS, keep this reset:
 }
 ```
 
-This protects the widget from WordPress box sizing and font inheritance.
+This protects the widget from host website box sizing and font inheritance.
 
 ## Form Controls
 
@@ -158,7 +167,7 @@ Use this pattern:
 }
 ```
 
-This prevents WordPress from making inputs unusually large.
+This prevents host website from making inputs unusually large.
 
 ## Selected Inputs Cards
 
@@ -307,7 +316,7 @@ Recommended structure:
 </div>
 ```
 
-The `p` here is acceptable because it is not a card and is protected by the note CSS. If it ever causes WordPress problems, change it to a `div`.
+The `p` here is acceptable because it is not a card and is protected by the note CSS. If it ever causes host website problems, change it to a `div`.
 
 Recommended CSS:
 
@@ -345,7 +354,7 @@ Recommended CSS:
 
 ## Copy Textarea
 
-WordPress may style focused textareas with red or other theme colors.
+host website may style focused textareas with red or other theme colors.
 
 Always scope textarea focus:
 
@@ -380,7 +389,7 @@ For each category, override copy colors:
 
 Links inside the app should be scoped.
 
-Do not rely on the WordPress theme link color.
+Do not rely on the host website theme link color.
 
 Use:
 
@@ -444,7 +453,7 @@ function buildThreadTurningCopyText() {
 }
 ```
 
-## Testing Checklist Before Updating WordPress
+## Testing Checklist Before Updating Your Website
 
 Test in the local file first:
 
@@ -457,7 +466,7 @@ Test in the local file first:
 - Test long material names.
 - Test narrow/mobile width.
 
-Then test in WordPress:
+Then test in the host website:
 
 - Confirm no text turns red or theme-colored.
 - Confirm inputs/selects are not oversized.
@@ -470,7 +479,7 @@ Then test in WordPress:
 
 ## Most Important Rule
 
-When something looks wrong in WordPress but not locally, suspect WordPress styling first.
+When something looks wrong in the host website but not locally, suspect host website styling first.
 
 The safest fixes are usually:
 

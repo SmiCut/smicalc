@@ -42,18 +42,19 @@ version; downloading an update does not carry your own edits into the new file.
 
 ## Use SmiCalc on your website
 
-You may publish SmiCalc on your company's website, including under your own brand.
-Ask whoever manages your website to upload the HTML file and link to it, or embed
-it in a page. Review [the customization guide](../REBRANDING.md) first.
+Download the HTML file for your language and open it in a plain-text editor.
+Copy the complete contents into your page builder's **Raw HTML / Custom HTML**
+block that preserves styles and scripts. Publish one copy of the app per page.
+The app runs directly inside the page; no iframe or app-specific plugin is needed.
+The same file also opens independently in a browser.
 
-For WordPress, give your web developer the HTML file and
-[the embedding guide](wordpress-embed-design-guide.md). The widget can be placed
-in a suitable Custom HTML block, but the site's settings must allow its scripts.
-Your developer should check the actual theme and mobile layout. Downloading the
-file alone does not install it in WordPress.
+Your editor must allow inline JavaScript and CSS. A normal visual text block may
+rewrite the code. See [the website embedding guide](website-embedding.md) for
+installation, updates and checks on desktop and mobile.
 
-The calculators can run with manual material selection. To enable the AI Material
-Selector on your website, [request approval for the exact website address](../MATERIAL_SELECTOR.md).
+You may [adapt the app for your company](../REBRANDING.md). The optional hosted
+AI service requires [approval for your website](../MATERIAL_SELECTOR.md).
+Manual material selection and calculations work without that approval.
 
 ## Need help?
 

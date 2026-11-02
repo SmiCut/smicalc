@@ -10,6 +10,9 @@ SmiCalc helps you calculate cutting data and estimate machining times for thread
 tapping, thread turning, grooving, solid carbide milling and drilling. Made by
 [SmiCut](https://smicut.com). Free to use and adapt, including commercial use.
 
+Use the same complete HTML file on your own website: paste its contents into a
+Raw HTML block. [Website installation guide](docs/website-embedding.md).
+
 ## Choose your language
 
 Use the online version immediately, or download **one HTML file** for your computer.
