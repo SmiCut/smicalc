@@ -73,10 +73,12 @@ license notice in the file. It does not need to appear visibly in your interface
 
 ## Help and further information
 
+[Browse the documentation](docs/README.md)
+
 - **Using SmiCalc:** email [info@smicut.se](mailto:info@smicut.se).
 - **AI access for your website:** follow the [Material Selector guide](MATERIAL_SELECTOR.md).
 - **Report a problem or suggest an improvement:** [open an issue](https://github.com/SmiCut/smicalc/issues).
-- **For developers:** [source files, tests and localization](docs/development.md), [contributing](CONTRIBUTING.md), and [MIT license](LICENSE).
+- **For developers:** [source files, tests and localization](docs/development.md), [contributing](.github/CONTRIBUTING.md), and [MIT license](LICENSE).
 - **Thread milling and CNC programs:** see [SmiProg](https://github.com/SmiCut/smiprog).
 
 Cutting data are starting recommendations. Check them for your tool, material,

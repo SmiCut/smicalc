@@ -47,7 +47,7 @@ Ask whoever manages your website to upload the HTML file and link to it, or embe
 it in a page. Review [the customization guide](../REBRANDING.md) first.
 
 For WordPress, give your web developer the HTML file and
-[the embedding guide](../wordpress-embed-design-guide.md). The widget can be placed
+[the embedding guide](wordpress-embed-design-guide.md). The widget can be placed
 in a suitable Custom HTML block, but the site's settings must allow its scripts.
 Your developer should check the actual theme and mobile layout. Downloading the
 file alone does not install it in WordPress.
