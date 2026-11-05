@@ -27,9 +27,12 @@ reduction, timing, localization status and validation boundaries.
 - [Thread Tapping Data and Formulas](formulas/Thread%20Tapping%20Data%20and%20Formulas.md)
 - [Thread Turning Data and Formulas](formulas/Thread%20Turning%20Data%20and%20Formulas.md)
 
-## Historical reference
+## Publication policy
 
-- [Minimum Bore Diameter prototype specification](reference/Minimum%20Bore%20Diameter%20Data%20and%20Formulas.md) — not included in the released app.
+[What belongs in the public project](publication-policy.md) defines the boundary
+between released customer tools and private research/business material, including
+the checklist for future changes. Unreleased prototype references are maintained
+separately in the private archive.
 
 The public repository contains the reusable application, calculation data and
 development documentation. Credentials, customer records, private commercial

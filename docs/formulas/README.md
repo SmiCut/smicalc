@@ -53,8 +53,9 @@ identified separately. Some original supplier extracts and user-provided images
 are provenance references and are not distributed in this public repository.
 Do not present their filenames as downloadable assets.
 
-The [minimum-bore prototype reference](../reference/Minimum%20Bore%20Diameter%20Data%20and%20Formulas.md)
-is historical work outside the released app, not an additional released calculator.
+Unreleased prototype specifications are maintained in the private development
+archive. This collection covers only the released app. See the
+[publication policy](../publication-policy.md).
 
 ## Keeping references current
 

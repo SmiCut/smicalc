@@ -86,3 +86,5 @@ license notice in the file. It does not need to appear visibly in your interface
 
 Cutting data are starting recommendations. Check them for your tool, material,
 machine and setup before machining.
+
+For contributors: [what belongs in this public project](docs/publication-policy.md).
