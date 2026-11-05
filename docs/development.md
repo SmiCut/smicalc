@@ -98,3 +98,10 @@ See [the documentation index](README.md) for user guides and technical reference
 Contribution and private security-reporting instructions are in `.github/`.
 Calculator formula specifications are grouped in [`docs/formulas/`](formulas/).
 The [Website embedding guide](website-embedding.md) is in `docs/`.
+
+## Publication boundary
+
+Follow the [publication policy](publication-policy.md) for source, references,
+workbooks and release assets. Keep unreleased prototypes and raw internal evidence
+in the private development archive. Only selected, reviewed material should move
+into the public project; generated files need the same review as source files.

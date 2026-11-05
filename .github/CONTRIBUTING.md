@@ -12,3 +12,8 @@ consistent with rounding, manual overrides and copied results.
 Keep credentials, customer information and internal business documents
 out of commits. Contributions are submitted under this repository's MIT license.
 SmiCut reviews contributions before merging into the official version.
+
+Before adding reference files, datasets or attachments, follow the
+[publication policy](../docs/publication-policy.md). Public branches and pull
+requests are not a private review area. Do not upload confidential material here
+for someone else to decide whether it should be public.
