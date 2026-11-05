@@ -1,12 +1,15 @@
 # Solid Carbide Drills - Data and Formulas Used in the App
 
+Reviewed against SmiCalc v1.0.0 source on 2026-11-05. Applies to English and all
+19 generated language/market variants. See [reference status](README.md) for scope.
+
 Source file: `smicut cutting data app.html`
 
 This document describes the cutting data logic currently used by the **Solid Carbide Drills** tab after the production-oriented update.
 
 ## 1. User Inputs
 
-The calculator uses the same visible inputs:
+The calculator uses these inputs:
 
 1. Material to machine
 2. Coolant
@@ -17,6 +20,7 @@ The calculator uses the same visible inputs:
    - 3xD
    - 5xD
    - 8xD
+5. Optional programmed drill-tip travel, for drilling/cycle-time estimates
 
 The user can also enter own values for cutting speed `Vc` and feed per revolution `Fn`. If an own value is entered and is greater than 0, the app uses that own value in the final spindle speed and table feed calculations.
 
@@ -248,7 +252,7 @@ Small-drill warning is shown because D < 3.0 mm
 | Table feed | Nearest whole mm/min |
 | Decimal separator in UI | Comma |
 
-## Programmed drilling depth and cycle times (2026-10-06, English review)
+## Programmed drilling depth and cycle times (released)
 
 Optional Drilling depth (mm) is programmed drill-tip travel L from the workpiece
 surface to the final depth, excluding approach above the surface. Blank retains
@@ -267,6 +271,7 @@ full-retract peck-cycle comparison. Internal coolant defaults to normal drilling
 These display thresholds and cycle assumptions are SmiCalc planning estimates,
 not a YG-1 peck table or recommended CNC program. No new cutting-data endorsement
 is implied for material groups outside the GENERAL series catalogue scope.
-All depth/time values and assumptions are included in copy output. Complete
+Entered depth and calculated time values are included in copy output. Cycle-time
+explanations and assumptions remain on screen and are not copied. Complete
 material thresholds, interval equations, sources and limitations:
 [Operation Time Estimates](Operation%20Time%20Estimates.md).

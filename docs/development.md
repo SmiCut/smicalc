@@ -7,7 +7,12 @@ byte identical to `Translation/English/smicut cutting data app-eng.html`:
 cmp "smicut cutting data app.html" "Translation/English/smicut cutting data app-eng.html"
 ```
 
-Update the matching formula document when calculation logic changes. Keep all CSS
+Use the [calculation reference map](formulas/README.md) to locate specifications
+and release scope. Update the matching formula document when calculation logic
+changes, including examples, effective overrides, copying and localization status.
+Keep shared timing equations in `docs/formulas/Operation Time Estimates.md` and
+link to them from calculator-specific documents. Record the reviewed release/date;
+do not leave completed localization work described as pending. Keep all CSS
 scoped under `#smicut-cutting-data-app`. Preserve IDs, units, grade codes, material
 keys and thread standards unless the intended feature explicitly changes them.
 

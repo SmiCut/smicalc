@@ -1,5 +1,8 @@
 # Thread Tapping - Data and Formulas Used in the App
 
+Reviewed against SmiCalc v1.0.0 source on 2026-11-05. Applies to English and all
+19 generated language/market variants. See [reference status](README.md) for scope.
+
 Source file: `smicut cutting data app.html`
 
 This document extracts the data and calculation logic currently used by the **Thread Tapping** tab.
@@ -19,7 +22,9 @@ The Thread Tapping calculator uses these inputs:
    - `EC` - HSSE
    - `PC` - HSSE-PM
 
-The user can also enter an own cutting speed.
+The user can also enter an own cutting speed and optional programmed tapping
+travel for timing. The forming-tap option `TFK` uses its separate supported
+size/material data; timing also includes descent and return for that option.
 
 If an own cutting speed is entered and is greater than 0, the app uses that own value in the final calculations. The recommended value remains visible, but is visually greyed.
 
@@ -251,7 +256,7 @@ Vf = 1485 * 1.00 = 1485 mm/min
 4. TPI-based threads calculate pitch as `25.4 / TPI` for table feed.
 5. The app uses the rounded recommended cutting speed as the default value when no own cutting speed is entered.
 
-## Programmed tapping depth and time estimates (2026-10-06, English review)
+## Programmed tapping depth and time estimates (released)
 
 Optional Tapping depth (mm) is programmed axial travel L from the workpiece
 surface to the reversal point, excluding approach above the surface.
@@ -264,5 +269,6 @@ distance, plus reversal/synchronization. The entered travel must already reflect
 the intended tool-tip endpoint. Example: M10x1.5, n=600 rpm, L=20 mm gives
 2.6667 sec (displayed 2.7 sec with the existing one-decimal time format).
 Invalid optional input hides times/disables copying; unsupported combinations
-never show stale numeric times. Times, depth and assumptions are copied.
+never show stale numeric times. Times and entered depth are copied. Cycle-time explanations and assumptions
+remain in the on-screen disclosure and are excluded from clipboard output.
 Exact formulas: [Operation Time Estimates](Operation%20Time%20Estimates.md).

@@ -1,5 +1,8 @@
 # Thread Turning - Data and Formulas Used in the App
 
+Reviewed against SmiCalc v1.0.0 source on 2026-11-05. Applies to English and all
+19 generated language/market variants. See [reference status](README.md) for scope.
+
 Source file: `smicut cutting data app.html`
 
 This document extracts the data and calculation logic currently used by the **Thread Turning** tab.
@@ -18,6 +21,8 @@ The Thread Turning calculator uses these inputs:
 6. Threading type
    - External
    - Internal
+7. Optional finished thread length, for time estimates
+8. Optional own cutting speed and number of passes
 
 FourCut is external only. If FourCut is selected, the app automatically selects External and disables only the Internal option.
 
@@ -198,8 +203,13 @@ base passes = max(4, round(interpolated pass count))
 If the user enters an own number of passes:
 
 ```text
-used passes = integer own passes, minimum 3, maximum 27
+used passes = min(valid integer own passes, 27), for values >= 3
 ```
+
+Integer inputs above 27 use 27 passes and show the radial-infeed limit note.
+Blank or fractional values fall back to the recommendation. Inputs 1 and 2 are
+blocked by the minimum-pass validation described below; they do not yield times
+or copyable results.
 
 ### FourCut Pass Reduction
 
@@ -345,7 +355,7 @@ Existing numeric reference tables are retained, but their HRC < 65 entries are
 not used as recommendations for these two calculators. Other calculators and
 material categories, including HRC < 55, are unchanged.
 
-## Thread length and time estimates (2026-10-06, English review)
+## Thread length and time estimates (released)
 
 Optional Thread length (mm) means finished axial thread length L. Blank retains
 the existing calculation without time results. `cutting time = 60 * L * N /
@@ -353,8 +363,54 @@ the existing calculation without time results. `cutting time = 60 * L * N /
 Cycle-time interval includes 3 pitches approach and 1 pitch run-out per pass,
 return motion and synchronization. No extra spring passes. Invalid optional
 input hides times/disables copy; material exclusions still suppress times.
-Times, length and assumptions are copied. Exact interval formulas and limitations:
+Times and entered thread length are copied. Cycle-time explanations and assumptions
+remain in the on-screen disclosure and are excluded from clipboard output. Exact interval formulas and limitations:
 [Operation Time Estimates](Operation%20Time%20Estimates.md).
+
+## FourCut passes and machining time
+
+FourCut's reduction is **material- and pitch-specific**, not a fixed advantage
+for every application. It applies only to external thread turning. The percentage
+table above uses the canonical material key and actual pitch, while the base
+pass-count table uses material factor Fm and its standard-specific pass pitch.
+NPT/NPTF therefore retain their special base lookup but use actual pitch for the
+FourCut reduction. Unsupported HRC < 65 material remains excluded even though
+historical numeric reference rows exist.
+
+Calculation order:
+
+1. Interpolate the base pass table and round, with at least four passes.
+2. For FourCut, apply the reduction percentage to that rounded base count,
+   round again, and retain at least four automatic passes.
+3. Apply a valid manual pass count instead when provided; do not reduce it again.
+4. Use this effective N for radial infeed and all thread-turning time estimates.
+
+### Worked comparison
+
+External metric thread, low-carbon steel (`steel-low-carbon`, Fm = 1.2),
+pitch 2 mm, finished length 36 mm, and the same 1,000 rpm for both insert types.
+No manual pass override. RPM is fixed here to isolate the effect of pass count.
+
+| Quantity | Triangular | FourCut |
+|---|---:|---:|
+| Base pass count at P2.0 / Fm1.2 | 7 | 7 |
+| FourCut table reduction | — | 20% |
+| Effective passes N | 7 | round(7 × 0.80) = 6 |
+| Cutting time = 60 × 36 × N / (2 × 1000) | 7.56 sec | 6.48 sec |
+| Displayed cutting time | 7.6 sec | 6.5 sec |
+
+Here the model gives about **14.3% less cutting time**, because the effective
+count changes from seven to six. A 20% table percentage does not imply an exact
+20% time saving after integer rounding. In applications where rounding or the
+four-pass floor gives the same count, switching insert type gives no pass-based
+time reduction. At a manual six passes for both inserts and otherwise identical
+inputs, both give 6.48 sec before display rounding.
+
+The cycle-time bounds also use N for cutting, approach, return and per-pass
+allowances. They describe one operation, exclude tool changes and inter-hole
+positioning, and are planning estimates rather than measured machine performance.
+Changing cutting speed also changes RPM and time; compare equal inputs to isolate
+pass-count effects. Full equations are in [Operation Time Estimates](Operation%20Time%20Estimates.md).
 
 ## Manual three-pass infeed (2026-10-27)
 
@@ -414,7 +470,7 @@ existing calculations. The two rows are separate; BSPT must not use the G row.
 Screen and clipboard both use these values with the existing three-decimal
 format. Time estimates still use the selected count N=4; no time-model change.
 
-## English minimum-pass validation (2026-10-27)
+## Minimum-pass validation in all languages
 
 Manual inputs 1 and 2 retain the entered value but set aria-invalid/custom
 validity, show a red border, and display "Enter at least 3 passes." in a reserved

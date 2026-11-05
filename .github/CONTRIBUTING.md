@@ -6,6 +6,9 @@ Keep product codes, material keys, units and thread standards stable unless a
 technical change explicitly requires it. Preserve host-page CSS isolation.
 
 Open focused pull requests, update relevant documentation and run the documented
-checks. Keep credentials, customer information and internal business documents
+checks. For calculator changes, update the [reference map](../docs/formulas/README.md)
+and affected specifications together with the implementation. Keep worked examples
+consistent with rounding, manual overrides and copied results.
+Keep credentials, customer information and internal business documents
 out of commits. Contributions are submitted under this repository's MIT license.
 SmiCut reviews contributions before merging into the official version.

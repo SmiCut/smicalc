@@ -1,12 +1,15 @@
 # Solid Carbide End Mills - Data and Formulas Used in the App
 
+Reviewed against SmiCalc v1.0.0 source on 2026-11-05. Applies to English and all
+19 generated language/market variants. See [reference status](README.md) for scope.
+
 Source file: `smicut cutting data app.html`
 
 This document describes the cutting data logic currently used by the **Solid Carbide End Mills** tab after the production-oriented update.
 
 ## 1. User Inputs
 
-The calculator still uses the same inputs:
+The calculator uses these inputs:
 
 1. Material to machine
 2. Cutter diameter `D` in mm
@@ -272,10 +275,14 @@ Vf = 0.074 * 4 * 6430 = 1903 mm/min
 5. Near blank engagement table cells, the app may fall back to the nearest valid table value inside the allowed area.
 6. Deep side milling above 3.0xD is warning-only when `ae / D <= 0.10`; it is stopped when `ae / D > 0.10`.
 
-## Material removal rate (2026-10-06, English review)
+## Material removal rate (released)
 
 Adds Material removal rate (Q), using existing ap, ae and the unrounded actual
 Vf: `Q = ap * ae * Vf / 1000` cm3/min. No new input. Uses actual speed/feed
 including overrides; no result for invalid/unsupported cutting conditions.
 Display has at most one decimal; tiny positive values show `< 0.1 cm³/min`.
 Included in copied output. See [Operation Time Estimates](Operation%20Time%20Estimates.md).
+
+Material removal rate is a volume per minute, not an operation duration. Milling
+has no entered path length and therefore does not estimate a complete milling
+cycle time. Q follows the effective feed, including valid speed/feed overrides.

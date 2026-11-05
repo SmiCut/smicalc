@@ -1,5 +1,8 @@
 # Grooving - Data and Formulas Used in the App
 
+Reviewed against SmiCalc v1.0.0 source on 2026-11-05. Applies to English and all
+19 generated language/market variants. See [reference status](README.md) for scope.
+
 Source: `smicut cutting data app.html` (English), synchronized with
 `Translation/English/smicut cutting data app-eng.html`.
 
@@ -12,7 +15,7 @@ turning. Stable clamping, correct centre height and coolant are recommended.
 
 The user approved continuous width bands, PDF speed intervals, no practical feed
 rounding, and an English-first release on 2026-09-24. Localization to all 19
-configured language/market variants was authorized on 2026-09-26. Text is maintained
+configured language/market variants is complete. Text is maintained
 in translation-workbook rows 198–228; generated apps preserve the English formulas.
 
 ## Inputs and grade recommendations
@@ -175,7 +178,7 @@ Invalid numeric inputs likewise show no recommendation; copying stays disabled
 until inputs are valid. Advisory own-speed/feed warnings alone do not suppress
 recommendations. Switching back to valid geometry restores normal results.
 
-## Grooving time (2026-10-06, English review)
+## Grooving time (released)
 
 Adds `t = 60 * H / (used f * n)` seconds for one radial plunge, using existing
 H and unrounded n/feed rate. Assumes constant RPM at the entered workpiece
@@ -183,3 +186,7 @@ diameter; excludes approach, dwell and return. No new input. Hidden for invalid
 geometry or unsupported material, and cleared on every recalculation. Only the time row is shown and copied; no extra timing note, assumptions
 disclosure or cycle estimate is displayed.
 See [Operation Time Estimates](Operation%20Time%20Estimates.md).
+
+Grooving models one radial plunge; the FourCut thread-turning pass-reduction
+table does not apply to grooving. Its time uses the effective speed and feed
+after valid overrides. It does not model a complete machine cycle.
