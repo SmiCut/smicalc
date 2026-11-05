@@ -1,8 +1,11 @@
 # Minimum Bore Diameter - data and formulas
 
-Standalone English prototype: `prototypes/minimum-bore/index.html`.
-Open directly in a browser. No build, backend, external fonts or images required.
-Production SmiCalc and localization sources are not modified.
+**Historical prototype specification — not a feature of SmiCalc v1.0.0.**
+Reviewed for scope on 2026-11-05. Retained for engineering context only.
+
+The prototype and its import script were developed outside this public release.
+Their original paths below are provenance references, not runnable files shipped
+in this repository. Production SmiCalc has no minimum-bore calculator tab.
 
 ## Sources and scope
 
@@ -15,9 +18,11 @@ Production SmiCalc and localization sources are not modified.
 - U-Type, images, carbide-shank variants and holders absent from the chart
   are outside this version's scope. No equivalence to unlisted holders is assumed.
 
-The workbook is read without modifications. Refresh its embedded insert data with
+In the original prototype workspace, the workbook was read without modifications.
+Its developer refresh command was
 `python3 prototypes/minimum-bore/import_catalogue.py /absolute/path/to/workbook.xlsx`
-(requires openpyxl). Holder constants are transcribed in that script.
+(requires openpyxl and the unpublished prototype workspace). Holder constants
+were transcribed in that script. The source workbook is not included here.
 
 ## Triangular
 

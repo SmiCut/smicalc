@@ -1,12 +1,15 @@
-# SmiCalc operation time estimates - English review, 2026-10-06
+# SmiCalc operation time estimates
+
+Reviewed against SmiCalc v1.0.0 source on 2026-11-05. Applies to English and all
+19 generated language/market variants. See [reference status](README.md) for scope.
 
 ## Scope and provenance
 
-User-approved scope: add milling MRR, radial grooving time, and optional finished
+The released app provides milling MRR, radial grooving time, and optional finished
 thread length for turning and programmed travel for tapping and drilling. Tapping time includes
 both descent and return. Cycle times are intervals for one operation, excluding
-tool changes and positioning between holes. English first; localized apps are not
-yet regenerated. All estimates follow the actual selected/overridden cutting data.
+tool changes and positioning between holes. These features are released in all
+20 app variants; localization was synchronized on 2026-11-02. All estimates follow the actual selected/overridden cutting data.
 
 These are **planning estimates, not calibrated machine-cycle predictions**. No
 machine examples were available. The cycle motion assumptions and peck-display
@@ -82,6 +85,17 @@ time row is shown/copied; no extra timing note or disclosure is displayed.
 ## Thread turning
 
 N = actual selected number of passes, including FourCut correction or override.
+
+The insert choice affects time through N. Triangular uses the interpolated,
+rounded base pass count; external FourCut applies its material- and pitch-specific
+reduction before rounding, with at least four automatic passes. A manual valid
+integer overrides the recommendation for either insert, without a second FourCut
+reduction. The effective count is capped at 27. See the
+[pass rules and worked comparison](Thread%20Turning%20Data%20and%20Formulas.md#fourcut-passes-and-machining-time).
+
+At identical length, pitch and RPM, cutting time and both unrounded cycle bounds
+are proportional to the effective pass count. Display rounding can obscure small
+differences. The model applies no additional FourCut time-discount factor.
 
 ```
 Vf = pitch * n
@@ -173,5 +187,6 @@ multiples of q.
 overrides, FourCut pass reduction, unsupported combinations, optional validation,
 depth/capacity boundaries, peck branches, copied results, desktop and mobile layout.
 Run with Node and Playwright; optional first argument is a screenshot directory.
-English sources must remain byte-identical. Localized generation, workbook strings
-and localized QA follow after the English review.
+English sources must remain byte-identical. For future changes, update workbook
+strings and regenerate affected locales, then run the shared verifier and localized
+browser checks. See [development](../development.md) for commands.
