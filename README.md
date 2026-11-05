@@ -1,4 +1,4 @@
-# SmiCalc
+<h1><img src="docs/images/smicalc-icon.png" alt="SmiCalc app icon" width="64" height="64" align="absmiddle"> SmiCalc</h1>
 
 **Free cutting-data calculators. Choose your language, open the app and start calculating.**
 
