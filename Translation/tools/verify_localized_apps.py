@@ -282,6 +282,8 @@ def check_japanese_brand_names(
     # Standalone JavaScript comment lines are developer notes, not UI labels.
     user_facing = re.sub(r"(?m)^\s*//[^\n]*(?:\n|$)", "", user_facing)
     user_facing = user_facing.replace("SmiCut AB", "")
+    # The report exposes these JavaScript identifiers in every locale.
+    user_facing = re.sub(r"\bSmiCalc(?:Report|Print)\b", "", user_facing)
     issues: list[str] = []
     for latin_name, japanese_name in {
         "SmiProg": "スミプログ",
