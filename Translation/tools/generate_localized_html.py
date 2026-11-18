@@ -1437,6 +1437,27 @@ def add_material_selector_translations(mapping: dict[str, str], locale: str, sou
     mapping["Material selected: "] = additions["Material selected"] + ": "
 
 
+def localize_pdf_report(report: str, locale: str, mapping: dict[str, str]) -> str:
+    # The report reads translated results from the calculator and contains its own
+    # print controls. Keep its JavaScript, artwork and CSS out of text translation.
+    brand = mapping["SmiCalc"]
+    config = {
+        "locale": locale,
+        "brand": brand,
+        "onlineBrand": f"{brand} オンライン" if locale == "ja" else f"{brand} Online",
+        "logoName": "スミカット" if locale == "ja" else "SmiCut",
+    }
+    updated, count = re.subn(
+        r"^  const config = \{[^\n]+\};$",
+        lambda _: "  const config = " + json.dumps(config, ensure_ascii=False) + ";",
+        report,
+        flags=re.M,
+    )
+    if count != 1:
+        raise ValueError("Expected exactly one PDF report configuration")
+    return updated
+
+
 def main() -> None:
     import argparse
 
@@ -1470,6 +1491,11 @@ def main() -> None:
         target_path = target_dir / target_template.format(suffix=config["suffix"])
         content = source_path.read_text(encoding="utf-8")
         if source_name == "smicut cutting data app-eng.html":
+            pdf_block = re.search(r"<!-- SmiCalc Online PDF\b.*?<!-- End SmiCalc Online PDF -->", content, re.S)
+            if not pdf_block:
+                raise ValueError("Missing PDF report in the English app")
+            report = localize_pdf_report(pdf_block.group(), config["api_language"], mapping)
+            content = content[:pdf_block.start()] + "@@SMICALC_PDF_REPORT@@" + content[pdf_block.end():]
             add_material_selector_translations(mapping, args.locale, content)
         localized, stats = localize_html(content, mapping, url_mapping)
         localized = replace_material_selector_api_language(localized, config["api_language"])
@@ -1481,6 +1507,7 @@ def main() -> None:
             localized = apply_tap_type_labels(localized, args.locale)
             localized = normalize_material_presentation(localized, args.locale)
             localized = apply_cjk_typography(localized, args.locale)
+            localized = localized.replace("@@SMICALC_PDF_REPORT@@", report)
         target_path.write_text(localized, encoding="utf-8")
         outputs.append(
             {
