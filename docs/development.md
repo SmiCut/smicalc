@@ -32,9 +32,10 @@ python3 Translation/tools/verify_localized_apps.py --locales sv
 node Translation/tools/capture_localized_app_screenshots.mjs --locales se --outDir Translation/qa-screenshots/current
 ```
 
-The locale configuration in the generator lists all 19 locales, workbook columns,
+The locale configuration in the generator lists all 26 non-default locales, workbook columns,
 filename suffixes and API language codes. Swedish uses API code `sv` and file
 suffix `se`. Do not invent localized SmiCut URLs or translate material keys.
+The seven additional editions use English product links and reviewed supplementary labels for PDF controls, material headings and compact UI text in `Translation/supplemental-labels.json`.
 Omit `--app-only` when intentionally updating the static material-category catalogue.
 Review visible changes at desktop and mobile widths, including validation,
 overrides, warnings and copy buttons. `NODE_BINARY` can override the verifier's

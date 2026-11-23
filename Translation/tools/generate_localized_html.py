@@ -24,6 +24,62 @@ URL_SOURCE_ALIASES = {
 }
 
 LOCALES = {
+    "cs": {
+        "folder": "Tjeckiska",
+        "target_column": "Czech",
+        "url_column": "cs_url",
+        "suffix": "cs",
+        "api_language": "cs",
+        "source_folder": "English",
+    },
+    "et": {
+        "folder": "Estniska",
+        "target_column": "Estonian",
+        "url_column": "et_url",
+        "suffix": "et",
+        "api_language": "et",
+        "source_folder": "English",
+    },
+    "eu": {
+        "folder": "Baskiska",
+        "target_column": "Basque",
+        "url_column": "eu_url",
+        "suffix": "eu",
+        "api_language": "eu",
+        "source_folder": "English",
+    },
+    "fi": {
+        "folder": "Finska",
+        "target_column": "Finnish",
+        "url_column": "fi_url",
+        "suffix": "fi",
+        "api_language": "fi",
+        "source_folder": "English",
+    },
+    "nb": {
+        "folder": "Norsk",
+        "target_column": "Norwegian Bokmål",
+        "url_column": "nb_url",
+        "suffix": "nb",
+        "api_language": "nb",
+        "source_folder": "English",
+    },
+    "pt-pt": {
+        "folder": "Portugisiska (Portugal)",
+        "target_column": "Portuguese (Portugal)",
+        "url_column": "pt-pt_url",
+        "suffix": "pt-pt",
+        "api_language": "pt-pt",
+        "source_folder": "English",
+    },
+    "ro": {
+        "folder": "Rumänska",
+        "target_column": "Romanian",
+        "url_column": "ro_url",
+        "suffix": "ro",
+        "api_language": "ro",
+        "source_folder": "English",
+    },
     "sv": {
         "folder": "Svenska",
         "target_column": "Swedish",
@@ -844,6 +900,17 @@ START_PAGE_LABELS = {
 }
 
 
+# These released editions share the workbook and use English product URLs.
+SUPPLEMENTAL_LABELS = json.loads((ROOT / "Translation/supplemental-labels.json").read_text(encoding="utf-8"))
+for language, labels in SUPPLEMENTAL_LABELS.items():
+    THREAD_SUMMARY_LABELS[language] = tuple(labels[key] for key in ("thread", "diameter", "pitch", "internal", "external"))
+    THREAD_PROFILE_LABELS[language] = labels["profiles"]
+    TAP_TYPE_LABELS[language] = labels["tapTypes"]
+    START_PAGE_LABELS[language] = {
+        "smiprog": labels["smiprog"], "milling_title": labels["milling"], "drilling_title": labels["drilling"]
+    }
+
+
 def lower_first_character(value: str) -> str:
     for index, char in enumerate(value):
         if char.isspace():
@@ -1437,6 +1504,19 @@ def add_material_selector_translations(mapping: dict[str, str], locale: str, sou
     mapping["Material selected: "] = additions["Material selected"] + ": "
 
 
+def localize_recommendation_heading(content: str, headings: list[str]) -> str:
+    escape = {ord(char): "\\" + char for char in r".*+?^${}()|[]\/"}
+    alternatives = "|".join(label.translate(escape) for label in headings)
+    pattern = (r"/^[ \t]*#{1,6}[ \t]*(?:[✅👉][ \t]*)?(?:\*\*)?(?:" + alternatives
+               + r")(?=[\s:*–—-]|$)[^\n]*\r?\n(?:[ \t]*\r?\n)*[^\n]+/gimu")
+    original = "explanation.innerHTML = formatBotReply(text);"
+    if content.count(original) != 1:
+        raise ValueError("Missing material explanation in English source")
+    replacement = (f"const explanationText = index < 0 ? text : text.replace({pattern}, '').trim();\n"
+                   "      explanation.innerHTML = formatBotReply(explanationText);")
+    return content.replace(original, replacement).replace(r"/^##\s+", r"/^#{1,6}[ \t]+")
+
+
 def localize_pdf_report(report: str, locale: str, mapping: dict[str, str]) -> str:
     # The report reads translated results from the calculator and contains its own
     # print controls. Keep its JavaScript, artwork and CSS out of text translation.
@@ -1447,6 +1527,13 @@ def localize_pdf_report(report: str, locale: str, mapping: dict[str, str]) -> st
         "onlineBrand": f"{brand} オンライン" if locale == "ja" else f"{brand} Online",
         "logoName": "スミカット" if locale == "ja" else "SmiCut",
     }
+    if locale in SUPPLEMENTAL_LABELS:
+        labels = SUPPLEMENTAL_LABELS[locale]
+        key = json.dumps(locale)
+        words = json.dumps([labels["print"], labels["folio"]], ensure_ascii=False)
+        close = json.dumps(labels["close"], ensure_ascii=False)
+        report = report.replace("const words = {", f"const words = {{\n    {key}:{words},")
+        report = report.replace("const closeWords = {", f"const closeWords = {{{key}:{close}, ")
     updated, count = re.subn(
         r"^  const config = \{[^\n]+\};$",
         lambda _: "  const config = " + json.dumps(config, ensure_ascii=False) + ";",
@@ -1473,6 +1560,14 @@ def main() -> None:
     config = LOCALES[args.locale]
     mapping = load_translation_map(config["target_column"])
     mapping.update(UI_TRANSLATION_OVERRIDES.get(args.locale, {}))
+    extra = SUPPLEMENTAL_LABELS.get(args.locale)
+    if extra:
+        mapping.update({
+            " mm/r": " " + extra["perRev"], " mm/rev": " " + extra["perRev"], " sec": " s",
+            "Thread": extra["thread"], "Pitch": extra["pitch"], "External thread": extra["external"],
+            "Internal thread": extra["internal"], "SmiProg - Thread Milling": extra["smiprog"],
+            "Milling": extra["milling"], "Drilling": extra["drilling"],
+        })
     url_mapping = load_url_map(config["url_column"])
     url_mapping.update(config.get("url_overrides", {}))
     source_dir = ROOT / "Translation" / config["source_folder"]
@@ -1497,7 +1592,10 @@ def main() -> None:
             report = localize_pdf_report(pdf_block.group(), config["api_language"], mapping)
             content = content[:pdf_block.start()] + "@@SMICALC_PDF_REPORT@@" + content[pdf_block.end():]
             add_material_selector_translations(mapping, args.locale, content)
-        localized, stats = localize_html(content, mapping, url_mapping)
+        file_mapping = mapping
+        if extra and source_name.startswith("smicut material categories"):
+            file_mapping = {**mapping, **extra["catalogue"]}
+        localized, stats = localize_html(content, file_mapping, url_mapping)
         localized = replace_material_selector_api_language(localized, config["api_language"])
         if source_name == "smicut cutting data app-eng.html":
             localized = enforce_material_category_keys(localized)
@@ -1507,6 +1605,8 @@ def main() -> None:
             localized = apply_tap_type_labels(localized, args.locale)
             localized = normalize_material_presentation(localized, args.locale)
             localized = apply_cjk_typography(localized, args.locale)
+            if extra:
+                localized = localize_recommendation_heading(localized, extra["finalHeadings"])
             localized = localized.replace("@@SMICALC_PDF_REPORT@@", report)
         target_path.write_text(localized, encoding="utf-8")
         outputs.append(
