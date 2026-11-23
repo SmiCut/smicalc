@@ -27,6 +27,22 @@ try {
   page.on('pageerror',e=>errors.push(e.message));
   await page.addInitScript(()=>Object.defineProperty(navigator,'clipboard',{value:{writeText:async value=>{window.__copied=value;}}}));
   await page.goto(pathToFileURL(file).href);
+  // Technical names can wrap. Measure the rendered words inside each tap control.
+  await page.locator('.scd-tab[data-scd-section="tapping"]').click();
+  for (const width of [320, 1280]) {
+    await page.setViewportSize({width, height:900});
+    const clipped = await page.locator('input[name="scd-tap-type"] + span').evaluateAll(labels =>
+      labels.filter(label => {
+        const box = label.parentElement.getBoundingClientRect();
+        const range = document.createRange();
+        range.selectNodeContents(label);
+        return [...range.getClientRects()].some(line =>
+          line.left < box.left - 1 || line.right > box.right + 1 ||
+          line.top < box.top - 1 || line.bottom > box.bottom + 1);
+      }).map(label => label.textContent)
+    );
+    assert.deepEqual(clipped, [], `${suffix}: clipped tap labels at ${width}px`);
+  }
   await page.locator('.scd-tab[data-scd-section="grooving"]').click();
   await page.locator('#scd-groove-depth').waitFor({state:'visible'});
   const fill=(key,value)=>page.locator('#scd-groove-'+key).fill(value);

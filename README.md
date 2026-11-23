@@ -17,25 +17,32 @@ Raw HTML block. [Website installation guide](docs/website-embedding.md).
 
 Use the online version immediately, or download **one HTML file** for your computer.
 No GitHub account, installation or programming knowledge is needed to use it.
-There are 20 language and market editions:
+There are 27 language and market editions:
 
 <!-- BEGIN LANGUAGE TABLE -->
 | Language | Use online | Download HTML |
 |---|---|---|
 | Bahasa Indonesia | [Open SmiCalc](https://smicut.com/id/smicalc-kalkulator-cutting-data/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-id.html) |
+| Čeština | [Open SmiCalc](https://smicut.com/cs/smicalc-kalkulator-reznych-podminek/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-cs.html) |
 | Dansk | [Open SmiCalc](https://smicut.com/da/smicalc-beregner-til-skaeredata/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-da.html) |
 | Deutsch | [Open SmiCalc](https://smicut.com/de/smicalc-schnittdatenrechner/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-de.html) |
+| Eesti | [Open SmiCalc](https://smicut.com/et/smicalc-loikeandmete-kalkulaator/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-et.html) |
 | English – Global | [Open SmiCalc](https://smicut.com/en/smicalc-cutting-data-calculator/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-en.html) |
 | English – South Africa | [Open SmiCalc](https://smicut.com/en-za/smicalc-cutting-data-calculator-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-en-za.html) |
 | Español – Global | [Open SmiCalc](https://smicut.com/es-gl/smicalc-calculadora-de-datos-de-corte-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-es-gl.html) |
 | Español – España | [Open SmiCalc](https://smicut.com/es/smicalc-calculadora-de-datos-de-corte/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-es.html) |
+| Euskara | [Open SmiCalc](https://smicut.com/eu/smicalc-ebaketa-datuen-kalkulagailua/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-eu.html) |
 | Français – Global | [Open SmiCalc](https://smicut.com/fr/smicalc-calculateur-de-donnees-de-coupe/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-fr.html) |
 | Français – Belgique | [Open SmiCalc](https://smicut.com/fr-be/smicalc-calculateur-de-donnees-de-coupe-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-fr-be.html) |
 | Italiano | [Open SmiCalc](https://smicut.com/it/smicalc-calcolatore-dei-dati-di-taglio/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-it.html) |
 | Magyar | [Open SmiCalc](https://smicut.com/hu/smicalc-forgacsolasi-adatok-kalkulatora/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-hu.html) |
 | Nederlands – België | [Open SmiCalc](https://smicut.com/nl-be/smicalc-snijgegevenscalculator/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-nl-be.html) |
 | Nederlands – Nederland | [Open SmiCalc](https://smicut.com/nl/smicalc-snijgegevenscalculator-2/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-nl.html) |
+| Norsk bokmål | [Open SmiCalc](https://smicut.com/nb/smicalc-kalkulator-for-skjaerdata/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-nb.html) |
 | Polski | [Open SmiCalc](https://smicut.com/pl/smicalc-kalkulator-parametrow-skrawania/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-pl.html) |
+| Português (Portugal) | [Open SmiCalc](https://smicut.com/pt/smicalc-calculadora-de-dados-de-corte/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-pt-pt.html) |
+| Română | [Open SmiCalc](https://smicut.com/ro/smicalc-calculator-de-parametri-de-aschiere/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-ro.html) |
+| Suomi | [Open SmiCalc](https://smicut.com/fi/smicalc-lastuamisarvolaskuri/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-fi.html) |
 | Svenska | [Open SmiCalc](https://smicut.com/sv/smicalc-berakningsverktyg-for-skardata/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-sv.html) |
 | Русский | [Open SmiCalc](https://smicut.com/ru/smicalc-%d0%ba%d0%b0%d0%bb%d1%8c%d0%ba%d1%83%d0%bb%d1%8f%d1%82%d0%be%d1%80-%d1%80%d0%b5%d0%b6%d0%b8%d0%bc%d0%be%d0%b2-%d1%80%d0%b5%d0%b7%d0%b0%d0%bd%d0%b8%d1%8f/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-ru.html) |
 | 简体中文 | [Open SmiCalc](https://smicut.com/zh/smicalc-%e5%88%87%e5%89%8a%e5%8f%82%e6%95%b0%e8%ae%a1%e7%ae%97%e5%99%a8/) | [Download](https://github.com/SmiCut/smicalc/releases/latest/download/smicalc-zh.html) |

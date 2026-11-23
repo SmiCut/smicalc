@@ -7,6 +7,13 @@
     "download": "smicalc-id.html"
   },
   {
+    "language": "Čeština",
+    "code": "cs",
+    "source": "Translation/Tjeckiska/smicut cutting data app-cs.html",
+    "online": "https://smicut.com/cs/smicalc-kalkulator-reznych-podminek/",
+    "download": "smicalc-cs.html"
+  },
+  {
     "language": "Dansk",
     "code": "da",
     "source": "Translation/Danska/smicut cutting data app-da.html",
@@ -19,6 +26,13 @@
     "source": "Translation/Tyska/smicut cutting data app-de.html",
     "online": "https://smicut.com/de/smicalc-schnittdatenrechner/",
     "download": "smicalc-de.html"
+  },
+  {
+    "language": "Eesti",
+    "code": "et",
+    "source": "Translation/Estniska/smicut cutting data app-et.html",
+    "online": "https://smicut.com/et/smicalc-loikeandmete-kalkulaator/",
+    "download": "smicalc-et.html"
   },
   {
     "language": "English – Global",
@@ -47,6 +61,13 @@
     "source": "Translation/Spanska/smicut cutting data app-es.html",
     "online": "https://smicut.com/es/smicalc-calculadora-de-datos-de-corte/",
     "download": "smicalc-es.html"
+  },
+  {
+    "language": "Euskara",
+    "code": "eu",
+    "source": "Translation/Baskiska/smicut cutting data app-eu.html",
+    "online": "https://smicut.com/eu/smicalc-ebaketa-datuen-kalkulagailua/",
+    "download": "smicalc-eu.html"
   },
   {
     "language": "Français – Global",
@@ -91,11 +112,39 @@
     "download": "smicalc-nl.html"
   },
   {
+    "language": "Norsk bokmål",
+    "code": "nb",
+    "source": "Translation/Norsk/smicut cutting data app-nb.html",
+    "online": "https://smicut.com/nb/smicalc-kalkulator-for-skjaerdata/",
+    "download": "smicalc-nb.html"
+  },
+  {
     "language": "Polski",
     "code": "pl",
     "source": "Translation/Polska/smicut cutting data app-pl.html",
     "online": "https://smicut.com/pl/smicalc-kalkulator-parametrow-skrawania/",
     "download": "smicalc-pl.html"
+  },
+  {
+    "language": "Português (Portugal)",
+    "code": "pt-pt",
+    "source": "Translation/Portugisiska (Portugal)/smicut cutting data app-pt-pt.html",
+    "online": "https://smicut.com/pt/smicalc-calculadora-de-dados-de-corte/",
+    "download": "smicalc-pt-pt.html"
+  },
+  {
+    "language": "Română",
+    "code": "ro",
+    "source": "Translation/Rumänska/smicut cutting data app-ro.html",
+    "online": "https://smicut.com/ro/smicalc-calculator-de-parametri-de-aschiere/",
+    "download": "smicalc-ro.html"
+  },
+  {
+    "language": "Suomi",
+    "code": "fi",
+    "source": "Translation/Finska/smicut cutting data app-fi.html",
+    "online": "https://smicut.com/fi/smicalc-lastuamisarvolaskuri/",
+    "download": "smicalc-fi.html"
   },
   {
     "language": "Svenska",

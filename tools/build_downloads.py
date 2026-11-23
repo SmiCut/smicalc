@@ -13,8 +13,10 @@ BASE = 'https://github.com/SmiCut/smicalc/releases/latest/download/'
 def main():
     editions = json.loads((ROOT / 'docs/downloads.json').read_text())
     names = [e['download'] for e in editions]
-    if len(names) != 20 or len(set(names)) != len(names):
-        raise ValueError('Expected 20 uniquely named downloads')
+    sources = {str(p.relative_to(ROOT)) for p in (ROOT / 'Translation').glob('*/smicut cutting data app-*.html')}
+    if (not names or len(set(names)) != len(names) or len(sources) != len(editions)
+            or sources != {e['source'] for e in editions}):
+        raise ValueError('Each localized app needs one uniquely named download')
     OUT.mkdir(parents=True, exist_ok=True)
     table = '| Language | Use online | Download HTML |\n|---|---|---|\n'
     guide = ('SMICALC — START HERE\n\n'

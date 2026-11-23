@@ -627,10 +627,7 @@ def check_tap_type_labels(generator, locales: dict[str, dict[str, str]]) -> list
                 issues.append(
                     f"{label}: expected visible {key!r} tap-type label {expected_label!r}, found {actual_visible_label!r}"
                 )
-            if len(expected_label) > 46:
-                issues.append(
-                    f"{label}: tap-type label is too long ({len(expected_label)} characters): {expected_label!r}"
-                )
+
 
     for label, path in (
         ("English source", ENGLISH_APP),
@@ -747,7 +744,11 @@ def check_grooving_localization(generator, locales: dict[str, dict[str, str]]) -
         content = path.read_text(encoding="utf-8")
         start = "        function parseGroovingNumber(value) {"
         end = "        function calculateThreadTurningData() {"
-        if start not in content or end not in content or content.split(start, 1)[1].split(end, 1)[0] != source.split(start, 1)[1].split(end, 1)[0]:
+        calculation = source.split(start, 1)[1].split(end, 1)[0]
+        if locale in generator.SUPPLEMENTAL_LABELS:
+            unit = generator.SUPPLEMENTAL_LABELS[locale]["perRev"]
+            calculation = calculation.replace("' mm/rev'", "' " + generator.js_escape(unit) + "'")
+        if start not in content or end not in content or content.split(start, 1)[1].split(end, 1)[0] != calculation:
             issues.append(f"{locale}: Grooving calculation code differs from English source")
         for token in ["section !== 'grooving'", *source_arrays]:
             if token not in content:
