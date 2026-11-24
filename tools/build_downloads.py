@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build user downloads from the checked-in production HTML, without changing it."""
+import codecs
 import hashlib
 import json
 from pathlib import Path
@@ -35,6 +36,9 @@ def main():
         data = (ROOT / edition['source']).read_bytes()
         if b'MIT License' not in data or b'smicut-cutting-data-app' not in data:
             raise ValueError(f'Missing app or license: {name}')
+        # Local HTML files have no HTTP charset. A UTF-8 signature also keeps
+        # the same markup suitable for pasting into a WordPress HTML block.
+        data = codecs.BOM_UTF8 + data.removeprefix(codecs.BOM_UTF8)
         assets[name] = data
         (OUT / name).write_bytes(data)
         guide += f"{edition['language']}: {name}\n"

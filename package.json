@@ -3,7 +3,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "test": "node Translation/tools/verify_operation_estimates.mjs && node Translation/tools/verify_grooving_localized.mjs all",
+    "test": "python3 tools/test_downloads.py && node Translation/tools/verify_operation_estimates.mjs && node Translation/tools/verify_grooving_localized.mjs all",
     "screenshots": "node Translation/tools/capture_localized_app_screenshots.mjs --locales eng,se --outDir Translation/qa-screenshots/current"
   },
   "devDependencies": {
