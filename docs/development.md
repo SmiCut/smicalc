@@ -83,7 +83,8 @@ npm test
 
 Run `python3 tools/build_downloads.py` to create individual HTML downloads, the
 all-language ZIP, checksums and release notes in `dist/downloads/`. The builder
-copies the app files without modifying their contents or embedded MIT notices.
+marks the HTML downloads as UTF-8 so browsers display localized text correctly
+when opening a file directly. The markup and embedded MIT notices are preserved.
 `docs/downloads.json` maps source files, native language labels and approved online
 URLs to stable download filenames. Keep the README language table aligned with it.
 
