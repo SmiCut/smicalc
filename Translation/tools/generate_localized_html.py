@@ -28,6 +28,9 @@ LOCALES = {
         "folder": "Tjeckiska",
         "target_column": "Czech",
         "url_column": "cs_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/cs/smiprog-software-pro-frezovani-zavitu/",
+        },
         "suffix": "cs",
         "api_language": "cs",
         "source_folder": "English",
@@ -36,6 +39,9 @@ LOCALES = {
         "folder": "Estniska",
         "target_column": "Estonian",
         "url_column": "et_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/et/smiprog-keermefreesimise-tarkvara/",
+        },
         "suffix": "et",
         "api_language": "et",
         "source_folder": "English",
@@ -44,6 +50,12 @@ LOCALES = {
         "folder": "Baskiska",
         "target_column": "Basque",
         "url_column": "eu_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/eu/smiprog-hariak-fresatzeko-softwarea/",
+            "https://smicut.com/en/universal-threading-taps/": "https://smicut.com/es/machos-universales-una-herramienta-para-multiples-materiales/",
+            "https://smicut.com/en/helix-angle-calculator/": "https://smicut.com/es/calculadora-del-angulo-de-helice/",
+            "https://smicut.com/en/knowledge/thread-turning/": "https://smicut.com/es/productos/herramientas-de-tornear-roscas/",
+        },
         "suffix": "eu",
         "api_language": "eu",
         "source_folder": "English",
@@ -52,6 +64,9 @@ LOCALES = {
         "folder": "Finska",
         "target_column": "Finnish",
         "url_column": "fi_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/fi/smiprog-kierteenjyrsintaohjelmisto/",
+        },
         "suffix": "fi",
         "api_language": "fi",
         "source_folder": "English",
@@ -60,6 +75,9 @@ LOCALES = {
         "folder": "Norsk",
         "target_column": "Norwegian Bokmål",
         "url_column": "nb_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/nb/smiprog-programvare-for-gjengefresing/",
+        },
         "suffix": "nb",
         "api_language": "nb",
         "source_folder": "English",
@@ -68,6 +86,9 @@ LOCALES = {
         "folder": "Portugisiska (Portugal)",
         "target_column": "Portuguese (Portugal)",
         "url_column": "pt-pt_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/pt/smiprog-software-de-fresagem-de-roscas/",
+        },
         "suffix": "pt-pt",
         "api_language": "pt-pt",
         "source_folder": "English",
@@ -76,6 +97,9 @@ LOCALES = {
         "folder": "Rumänska",
         "target_column": "Romanian",
         "url_column": "ro_url",
+        "url_overrides": {
+            "https://smicut.com/en/software/": "https://smicut.com/ro/smiprog-software-pentru-frezarea-filetelor/",
+        },
         "suffix": "ro",
         "api_language": "ro",
         "source_folder": "English",
@@ -900,7 +924,7 @@ START_PAGE_LABELS = {
 }
 
 
-# These released editions share the workbook and use English product URLs.
+# Additional editions share the translation workbook and the same summary fields.
 SUPPLEMENTAL_LABELS = json.loads((ROOT / "Translation/supplemental-labels.json").read_text(encoding="utf-8"))
 for language, labels in SUPPLEMENTAL_LABELS.items():
     THREAD_SUMMARY_LABELS[language] = tuple(labels[key] for key in ("thread", "diameter", "pitch", "internal", "external"))
